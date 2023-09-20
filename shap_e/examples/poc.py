@@ -12,7 +12,7 @@ diffusion = diffusion_from_config(load_config('diffusion'))
 
 batch_size = 4
 guidance_scale = 15.0
-prompt = "an airplane"
+prompt = "a hollow water bottle"
 
 latents = sample_latents(
     batch_size=batch_size,

@@ -42,6 +42,7 @@ def sample_latents(
     sigma_min: float,
     sigma_max: float,
     s_churn: float,
+    x_T = None,
     device: Optional[torch.device] = None,
     progress: bool = False,
 ) -> torch.Tensor:
@@ -72,6 +73,7 @@ def sample_latents(
                 s_churn=s_churn,
                 guidance_scale=guidance_scale,
                 progress=progress,
+                x_T = x_T
             )
         else:
             internal_batch_size = batch_size

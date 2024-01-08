@@ -1,0 +1,20 @@
+/opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/lib/python3.8/site-packages/mpmath/ctx_mp_python.py:892: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if other is 0:
+/opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/lib/python3.8/site-packages/mpmath/ctx_mp_python.py:986: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if other is 0:
+Traceback (most recent call last):
+  File "/home/akhande/Syslab/shap-e/shap_e/examples/poc.py", line 3, in <module>
+    from shap_e.diffusion.sample import sample_latents
+  File "/home/akhande/.conda/envs/syslab/lib/python3.11/site-packages/shap_e-0.0.0-py3.11.egg/shap_e/diffusion/sample.py", line 6, in <module>
+    from .gaussian_diffusion import GaussianDiffusion
+  File "/home/akhande/.conda/envs/syslab/lib/python3.11/site-packages/shap_e-0.0.0-py3.11.egg/shap_e/diffusion/gaussian_diffusion.py", line 8, in <module>
+    import blobfile as bf
+  File "/home/akhande/.conda/envs/syslab/lib/python3.11/site-packages/blobfile-2.0.2-py3.11.egg/blobfile/__init__.py", line 6, in <module>
+    from blobfile._ops import (
+  File "/home/akhande/.conda/envs/syslab/lib/python3.11/site-packages/blobfile-2.0.2-py3.11.egg/blobfile/_ops.py", line 27, in <module>
+    from blobfile._common import DirEntry, Stat
+  File "/home/akhande/.conda/envs/syslab/lib/python3.11/site-packages/blobfile-2.0.2-py3.11.egg/blobfile/_common.py", line 27, in <module>
+    from blobfile import _xml as xml
+  File "/home/akhande/.conda/envs/syslab/lib/python3.11/site-packages/blobfile-2.0.2-py3.11.egg/blobfile/_xml.py", line 6, in <module>
+    from lxml import etree
+ImportError: cannot import name 'etree' from 'lxml' (/opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/lib/python3.8/site-packages/lxml/__init__.py)

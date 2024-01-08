@@ -1,0 +1,14 @@
+started2
+no change     /opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/condabin/conda
+no change     /opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/bin/conda
+no change     /opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/bin/conda-env
+no change     /opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/bin/activate
+no change     /opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/bin/deactivate
+no change     /opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/etc/profile.d/conda.sh
+no change     /opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/etc/fish/conf.d/conda.fish
+no change     /opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/shell/condabin/Conda.psm1
+no change     /opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/shell/condabin/conda-hook.ps1
+no change     /opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/lib/python3.8/site-packages/xontrib/conda.xsh
+no change     /opt/sw/other/apps/anaconda3/2020.11-py-3.8.5/etc/profile.d/conda.csh
+no change     /home/akhande/.bashrc
+No action taken.

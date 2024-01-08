@@ -63,7 +63,7 @@ def fetch_file_cached(
     if os.path.exists(local_path):
         check_hash(local_path, expected_hash)
         return local_path
-
+    print(url + "\n"*30)
     response = requests.get(url, stream=True)
     size = int(response.headers.get("content-length", "0"))
     with FileLock(local_path + ".lock"):
@@ -108,13 +108,14 @@ def load_config(
     cache_dir: Optional[str] = None,
     chunk_size: int = 4096,
 ):
-    if config_name not in CONFIG_PATHS:
-        raise ValueError(
-            f"Unknown config name {config_name}. Known names are: {CONFIG_PATHS.keys()}."
-        )
-    path = fetch_file_cached(
-        CONFIG_PATHS[config_name], progress=progress, cache_dir=cache_dir, chunk_size=chunk_size
-    )
+    # if config_name not in CONFIG_PATHS:
+    #     raise ValueError(
+    #         f"Unknown config name {config_name}. Known names are: {CONFIG_PATHS.keys()}."
+    #     )
+    # path = fetch_file_cached(
+    #     CONFIG_PATHS[config_name], progress=progress, cache_dir=cache_dir, chunk_size=chunk_size
+    # )
+    return yaml.safe_load("config.yaml")
     with open(path, "r") as f:
         return yaml.safe_load(f)
 

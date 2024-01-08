@@ -4,7 +4,7 @@ from shap_e.diffusion.sample import sample_latents
 from shap_e.diffusion.gaussian_diffusion import diffusion_from_config
 from shap_e.models.download import load_model, load_config
 from shap_e.util.notebooks import create_pan_cameras, decode_latent_images, gif_widget
-from shap_e.diffusion.k_diffusion import sample_heun, GaussianToKarrasDenoiser
+from shap_e.diffusion.k_diffusion import sample_heun, GaussianToKarrasDenoiser, sample_dpm
 import argparse
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 parser = argparse.ArgumentParser()
@@ -43,7 +43,7 @@ def denoiser(x_t, sigma):
             )
             return denoised
 
-latents = sample_heun(denoiser, latents_old, torch.Tensor([10]*32).cuda(), s_churn=10e3)
+latents = sample_dpm(denoiser, latents_old, torch.Tensor([12]*16).cuda(), s_churn=10e3)
 
 for x in latents:
       lat = x["x"]
@@ -60,7 +60,7 @@ latents_new = sample_latents(
     clip_denoised=True,
     use_fp16=True,
     use_karras=True,
-    karras_steps=32,
+    karras_steps=64,
     sigma_min=1e-3,
     sigma_max=160,
     s_churn=0,

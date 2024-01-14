@@ -103,10 +103,7 @@ def hash_file(path: str) -> str:
 
 
 def load_config(
-    config_name: str,
-    progress: bool = False,
-    cache_dir: Optional[str] = None,
-    chunk_size: int = 4096,
+    configs: str
 ):
     # if config_name not in CONFIG_PATHS:
     #     raise ValueError(
@@ -115,7 +112,7 @@ def load_config(
     # path = fetch_file_cached(
     #     CONFIG_PATHS[config_name], progress=progress, cache_dir=cache_dir, chunk_size=chunk_size
     # )
-    return yaml.safe_load("config.yaml")
+    return yaml.safe_load(configs)
     with open(path, "r") as f:
         return yaml.safe_load(f)
 
@@ -139,12 +136,13 @@ def load_checkpoint(
 
 def load_model(
     model_name: str,
+    configs: str,
     device: torch.device,
     **kwargs,
 ) -> Dict[str, torch.Tensor]:
     from .configs import model_from_config
 
-    model = model_from_config(load_config(model_name, **kwargs), device=device)
+    model = model_from_config(load_config(configs, **kwargs), device=device)
     model.load_state_dict(load_checkpoint(model_name, device=device, **kwargs))
     model.eval()
     return model
